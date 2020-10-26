@@ -1,8 +1,8 @@
 {
-  "name": "unicoder",
-  "version": "0.0.0",
-  "main": "unicoder.js",
-  "repository": "git@github.com:xero/unicoder.git",
+  "name": "sofancy",
+  "version": "1.0.0",
+  "main": "sofancy.js",
+  "repository": "git@github.com:xero/sofancy.git",
   "license": "CC0",
   "dependencies": {}
 }
