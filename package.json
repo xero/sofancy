@@ -1,0 +1,8 @@
+{
+  "name": "unicoder",
+  "version": "0.0.0",
+  "main": "unicoder.js",
+  "repository": "git@github.com:xero/unicoder.git",
+  "license": "CC0",
+  "dependencies": {}
+}
