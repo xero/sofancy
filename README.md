@@ -60,7 +60,14 @@ txt: ᒪᒪᗩᗰᗩᔕ
   git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 ```
 ## install
-use `npm` to globally install. (make sure ${XDG_DATA_HOME}/npm/bin is in your path)
+clone and install
+```
+git clone git@github.com:xero/sofancy.git sofancy
+cd sofancy
+npm i -t
+```
+
+use `npm` to globally install
 `npm i -g sofancy`
 
 ### note
