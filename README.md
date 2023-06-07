@@ -45,16 +45,18 @@ wide            Ｙｏｕ Ｓｏ Ｆａｎｃｙ
 __ῳɛıཞɖ ųŋıƈơɖɛ ʄƖɛҳıŋɠ? 😜__
 
 ```
-usage: ./sofancy.js [-f (font) | -t] string
+usage: sofancy [-f (font) | -t] string
 
  flags:
   -f|--font (font) : output in a single font
   -t|--titles      : display titles in output
 
  examples:
-  /sofancy.js -f wide aesthetics
+  sofancy -f wide aesthetics
 ａｅｓｔｈｅｔｉｃｓ
-  /sofancy.js -t some string | fzf | xsel -i
+  sofancy -tf neon llamas | sed 's/neon.* /txt: /'
+txt: ᒪᒪᗩᗰᗩᔕ
+  sofancy -t some string | fzf | xsel -i
   git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 ```
 

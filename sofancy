@@ -6,16 +6,18 @@ let argv = require('minimist-lite')(process.argv.slice(2));
 let charmap,find,font,str='',titles=false;
 
 function usage() {
-	console.log(`usage: ./sofancy.js [-f (font) | -t] string
+	console.log(`usage: sofancy [-f (font) | -t] string
 
  flags:
   -f|--font (font) : output in a single font
   -t|--titles      : display titles in output
 
  examples:
-  /sofancy.js -f wide aesthetics
+  sofancy -f wide aesthetics
 ａｅｓｔｈｅｔｉｃｓ
-  /sofancy.js -t some string | fzf | xsel -i
+  sofancy -tf neon llamas | sed 's/neon.* /txt: /'
+txt: ᒪᒪᗩᗰᗩᔕ
+  sofancy -t some string | fzf | xsel -i
   git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 `)
 	process.exit();
@@ -24,7 +26,9 @@ function setArgs() {
 	(argv.f || argv.font) ? font=argv.f || argv.font : delete font;
 	find=(font == undefined) ? /.*json$/ : `${font}.json`;
 	titles=(argv.t || argv.titles) ? true : false;
-	if (argv.titles) {
+	if (argv.t && !font) {
+		str=argv.t+" "+argv._.toString().replace(',', ' ');
+	} else if (argv.titles && !font) {
 		str=argv.titles+" "+argv._.toString().replace(',', ' ');
 	} else {
 		str=argv._.toString().replace(',', ' ');
