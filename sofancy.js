@@ -24,7 +24,7 @@ txt: ᒪᒪᗩᗰᗩᔕ
 }
 function setArgs() {
 	font=(argv.f || argv.font) ? argv.f || argv.font : false;
-	find=(!font) ? /.*json$/ : `${font}.json`;
+	find=(!font) ? /.*json$/ : new RegExp(`\\b${font}.json\\b`, 'gi');
 	titles=(argv.t || argv.titles) ? true : false;
 	if (argv.t && !font) {
 		str=argv.t+" "+argv._.toString().replace(',', ' ');
