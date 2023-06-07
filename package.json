@@ -1,11 +1,30 @@
 {
   "name": "sofancy",
-  "author": "xero x@xero.style",
-  "version": "1.0.0",
+  "author": "xero <x@xero.style> (https://x-e.ro)",
+  "version": "1.0.1",
   "main": "sofancy",
-  "repository": "github.com:xero/sofancy",
-  "license": "CC0",
+  "repository": {
+    "type": "git",
+    "url": "github.com:xero/sofancy"
+  },
+  "license": "CC0-1.0",
   "dependencies": {
     "minimist-lite": "github:meszaros-lajos-gyorgy/minimist-lite"
-  }
+  },
+  "description": "fun unicode font tool",
+  "directories": {
+    "lib": "src/lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "sofancy -t So Fancy"
+  },
+  "keywords": [
+    "unicode",
+    "fonts",
+    "unicode-fonts",
+    "unicode",
+    "fonts",
+    "aesthetics"
+  ]
 }
