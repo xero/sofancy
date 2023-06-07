@@ -1,8 +1,8 @@
 {
   "name": "sofancy",
   "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "1.1.1",
-  "main": "src/index.js",
+  "version": "1.1.2",
+  "main": "sofancy.js",
   "repository": {
     "type": "git",
     "url": "github.com:xero/sofancy"
@@ -13,14 +13,14 @@
   },
   "description": "fun unicode font tool",
   "directories": {
-    "lib": "src/lib"
+    "fonts": "./fonts"
   },
   "bin": {
-    "sofancy": "src/index.js"
+    "sofancy": "sofancy.js"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "src/index.js -t So Fancy"
+    "test": "./sofancy.js -t So Fancy"
   },
   "keywords": [
     "unicode",

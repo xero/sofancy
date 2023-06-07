@@ -23,8 +23,8 @@ txt: ᒪᒪᗩᗰᗩᔕ
 	process.exit();
 }
 function setArgs() {
-	(argv.f || argv.font) ? font=argv.f || argv.font : delete font;
-	find=(font == undefined) ? /.*json$/ : `${font}.json`;
+	font=(argv.f || argv.font) ? argv.f || argv.font : false;
+	find=(!font) ? /.*json$/ : `${font}.json`;
 	titles=(argv.t || argv.titles) ? true : false;
 	if (argv.t && !font) {
 		str=argv.t+" "+argv._.toString().replace(',', ' ');
@@ -47,7 +47,7 @@ const walk = async (dir, filelist = []) => {
 		} else {
 			if(file.match(find)) {
 				filelist.push(file);
-				charmap = require(__dirname+`/lib/${file}`);
+				charmap = require(__dirname+`/fonts/${file}`);
 				let title=(titles) ? file.replace(".json", "").padEnd(15) : '';
 				console.log(
 					title+
@@ -68,4 +68,4 @@ const walk = async (dir, filelist = []) => {
 	}
 }
 setArgs();
-walk(__dirname+'/lib');
+walk(__dirname+'/fonts');
