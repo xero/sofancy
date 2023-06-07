@@ -1,8 +1,11 @@
 {
   "name": "sofancy",
+  "author": "xero x@xero.style",
   "version": "1.0.0",
-  "main": "sofancy.js",
-  "repository": "git@github.com:xero/sofancy.git",
+  "main": "sofancy",
+  "repository": "github.com:xero/sofancy",
   "license": "CC0",
-  "dependencies": {}
+  "dependencies": {
+    "minimist-lite": "github:meszaros-lajos-gyorgy/minimist-lite"
+  }
 }

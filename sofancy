@@ -1,13 +1,34 @@
 #!/usr/bin/env node
-
 const fs = require('fs').promises;
 const path = require('path');
-
-var charmap,str='';
-for(var v of process.argv.splice(2,process.argv.length-1)) {
-	str+=" "+v;
+const parseArgs = require('minimist-lite');
+let argv = require('minimist-lite')(process.argv.slice(2));
+let charmap,find,font,str,title;
+if (argv.font) {
+	font=argv.font;
+} else if (argv.f) {
+	font=argv.f;
+} else {
+	delete font
 }
+find=(font == undefined) ? /.*json$/ : `${font}.json`;
+str=argv._.toString().replace(',', ' ');
+if (str == '') {
+	usage();
+}
+function usage() {
+	console.log(`usage: ./sofancy.js [-f (font) | -t] string
 
+ flags:
+  -f (font) : output in a single font
+  -t        : display titles in output
+
+ examples:
+  /sofancy.js -f wide aesthetics
+  /sofancy.js -t some string | fzf | xsel -i
+`)
+	process.exit();
+}
 const walk = async (dir, filelist = []) => {
 	const files = await fs.readdir(dir);
 
@@ -18,11 +39,12 @@ const walk = async (dir, filelist = []) => {
 		if (stat.isDirectory()) {
 			filelist = await walk(filepath, filelist);
 		} else {
-			if(file.match(/.*json$/)) {
+			if(file.match(find)) {
 				filelist.push(file);
 				charmap = require(__dirname+`/lib/${file}`);
+				title=(argv.t) ? file.replace(".json", "").padEnd(15) : '';
 				console.log(
-					file.replace(".json", "").padEnd(15)+
+					title+
 					str.replace(/./g, function (s) {
 						if(s in charmap) {
 							return charmap[s]
