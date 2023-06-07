@@ -45,8 +45,17 @@ wide            Ｙｏｕ Ｓｏ Ｆａｎｃｙ
 __ῳɛıཞɖ ųŋıƈơɖɛ ʄƖɛҳıŋɠ? 😜__
 
 ```
-./sofancy.js aesthetics | grep wide | sed 's/^.* //'
+usage: ./sofancy.js [-f (font) | -t] string
+
+ flags:
+  -f|--font (font) : output in a single font
+  -t|--titles      : display titles in output
+
+ examples:
+  /sofancy.js -f wide aesthetics
 ａｅｓｔｈｅｔｉｃｓ
+  /sofancy.js -t some string | fzf | xsel -i
+  git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 ```
 
 # license

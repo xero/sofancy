@@ -3,31 +3,33 @@ const fs = require('fs').promises;
 const path = require('path');
 const parseArgs = require('minimist-lite');
 let argv = require('minimist-lite')(process.argv.slice(2));
-let charmap,find,font,str,title;
-if (argv.font) {
-	font=argv.font;
-} else if (argv.f) {
-	font=argv.f;
-} else {
-	delete font
-}
-find=(font == undefined) ? /.*json$/ : `${font}.json`;
-str=argv._.toString().replace(',', ' ');
-if (str == '') {
-	usage();
-}
+let charmap,find,font,str='',titles=false;
+
 function usage() {
 	console.log(`usage: ./sofancy.js [-f (font) | -t] string
 
  flags:
-  -f (font) : output in a single font
-  -t        : display titles in output
+  -f|--font (font) : output in a single font
+  -t|--titles      : display titles in output
 
  examples:
   /sofancy.js -f wide aesthetics
+ａｅｓｔｈｅｔｉｃｓ
   /sofancy.js -t some string | fzf | xsel -i
+  git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 `)
 	process.exit();
+}
+function setArgs() {
+	(argv.f || argv.font) ? font=argv.f || argv.font : delete font;
+	find=(font == undefined) ? /.*json$/ : `${font}.json`;
+	titles=(argv.t || argv.titles) ? true : false;
+	if (argv.titles) {
+		str=argv.titles+" "+argv._.toString().replace(',', ' ');
+	} else {
+		str=argv._.toString().replace(',', ' ');
+	}
+	if (str == '') { usage(); }
 }
 const walk = async (dir, filelist = []) => {
 	const files = await fs.readdir(dir);
@@ -42,7 +44,7 @@ const walk = async (dir, filelist = []) => {
 			if(file.match(find)) {
 				filelist.push(file);
 				charmap = require(__dirname+`/lib/${file}`);
-				title=(argv.t) ? file.replace(".json", "").padEnd(15) : '';
+				let title=(titles) ? file.replace(".json", "").padEnd(15) : '';
 				console.log(
 					title+
 					str.replace(/./g, function (s) {
@@ -61,4 +63,5 @@ const walk = async (dir, filelist = []) => {
 		}
 	}
 }
+setArgs();
 walk(__dirname+'/lib');
