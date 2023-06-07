@@ -59,8 +59,15 @@ txt: ᒪᒪᗩᗰᗩᔕ
   sofancy -t some string | fzf | xsel -i
   git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 ```
+## install
+use `npm` to globally install. (make sure ${XDG_DATA_HOME}/npm/bin is in your path)
+`npm i -g sofancy`
 
-# license
+### note
+on unix systems node "bins" are normally placed in `/usr/local/lib/node` or `/usr/local/lib/node_modules` unless your export a custom `NODE_PATH`. either way, make sure the appropriate directory is in your path.
+
+
+## license
 
 ![kopimi logo](https://gist.githubusercontent.com/xero/cbcd5c38b695004c848b73e5c1c0c779/raw/6b32899b0af238b17383d7a878a69a076139e72d/kopimi-sm.png)
 

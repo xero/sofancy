@@ -1,8 +1,8 @@
 {
   "name": "sofancy",
   "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "1.0.1",
-  "main": "sofancy",
+  "version": "1.1.0",
+  "main": "src/sofancy.js",
   "repository": {
     "type": "git",
     "url": "github.com:xero/sofancy"
@@ -15,9 +15,12 @@
   "directories": {
     "lib": "src/lib"
   },
+  "bin": {
+    "sofancy": "src/sofancy.js"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "sofancy -t So Fancy"
+    "test": "src/sofancy.js -t So Fancy"
   },
   "keywords": [
     "unicode",
