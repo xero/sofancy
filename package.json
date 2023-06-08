@@ -1,8 +1,9 @@
 {
   "name": "sofancy",
   "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "main": "sofancy.js",
+  "description": "fun unicode font tool",
   "repository": {
     "type": "git",
     "url": "github.com:xero/sofancy"
@@ -11,16 +12,18 @@
   "dependencies": {
     "minimist-lite": "github:meszaros-lajos-gyorgy/minimist-lite"
   },
-  "description": "fun unicode font tool",
   "directories": {
     "fonts": "./fonts"
   },
   "bin": {
     "sofancy": "sofancy.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^8.42.0"
+  },
   "scripts": {
-    "test": "./sofancy.js -t So Fancy"
+    "test": "./sofancy.js -t So Fancy",
+    "lint": "eslint --cache ."
   },
   "keywords": [
     "unicode",

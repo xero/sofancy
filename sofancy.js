@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs').promises;
 const path = require('path');
-const parseArgs = require('minimist-lite');
 let argv = require('minimist-lite')(process.argv.slice(2));
 let charmap,find,font,str='',titles=false;
 
@@ -38,7 +37,7 @@ function setArgs() {
 const walk = async (dir, filelist = []) => {
 	const files = await fs.readdir(dir);
 
-	for (file of files) {
+	for (const file of files) {
 		const filepath = path.join(dir, file);
 		const stat = await fs.stat(filepath);
 
