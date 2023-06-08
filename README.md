@@ -68,6 +68,7 @@ npm i -g .
 ```
 
 ~~use `npm` to globally install~~ (this seems to still not be working, help?)
+
 `npm i -g sofancy`
 
 ### note
