@@ -64,10 +64,10 @@ clone and install
 ```
 git clone git@github.com:xero/sofancy.git sofancy
 cd sofancy
-npm i -t
+npm i -g .
 ```
 
-use `npm` to globally install
+~~use `npm` to globally install~~ (this seems to still not be working, help?)
 `npm i -g sofancy`
 
 ### note
