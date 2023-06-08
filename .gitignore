@@ -1,5 +1,6 @@
 node_modules/
 Thumbs.db
+.eslintcache
 *.DS_Store
 *.tmp
 *.log
