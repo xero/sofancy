@@ -67,7 +67,7 @@ cd sofancy
 npm i -g .
 ```
 
-~~use `npm` to globally install~~ (this seems to still not be working, help?)
+use `npm` to globally install
 
 `npm i -g sofancy`
 
