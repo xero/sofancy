@@ -1,7 +1,7 @@
 {
   "name": "sofancy",
   "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "main": "sofancy.js",
   "description": "fun unicode font tool",
   "repository": {
@@ -9,9 +9,6 @@
     "url": "github.com:xero/sofancy"
   },
   "license": "CC0-1.0",
-  "dependencies": {
-    "minimist-lite": "github:meszaros-lajos-gyorgy/minimist-lite"
-  },
   "directories": {
     "fonts": "./fonts"
   },
