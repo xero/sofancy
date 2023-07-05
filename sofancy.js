@@ -24,6 +24,9 @@ txt: ᒪᒪᗩᗰᗩᔕ
 `);
   process.exit();
 }
+function reverse(s) {
+  return (s === '') ? '' : reverse(s.substr(1)) + s.charAt(0);
+}
 function setArgs() {
   const { parseArgs } = require("node:util");
   const args = process.argv.slice(2);
@@ -46,7 +49,9 @@ function setArgs() {
     font = values.font || false;
     find = !font ? /.*json$/ : new RegExp(`\\b${font}.json\\b`, "gi");
     titles = values.titles || false;
-    str = positionals.join(" ") || usage()
+    str = (font == "upsidedown" || font == "mirrorflip")
+					? reverse(positionals.join(" "))
+					: positionals.join(" ") || usage();
   } catch (e) {
     usage();
   }
@@ -77,7 +82,7 @@ const walk = async (dir, filelist = []) => {
               } else {
                 return s;
               }
-            })
+            }) + " "
         );
       }
     }
