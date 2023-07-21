@@ -1,7 +1,7 @@
 {
   "name": "sofancy",
   "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "main": "sofancy.js",
   "description": "fun unicode font tool",
   "repository": {
@@ -26,6 +26,11 @@
     "unicode-fonts",
     "unicode",
     "fonts",
-    "aesthetics"
+    "aesthetics",
+		"cli",
+		"tty",
+		"terminal",
+		"console",
+		"textart"
   ]
 }

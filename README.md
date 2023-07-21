@@ -2,6 +2,10 @@
 
 fun unicode font tool
 
+## demo
+
+https://sofancy.0w.nz
+
 ## examples
 
 ```
