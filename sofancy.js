@@ -1777,7 +1777,7 @@ const fonts = {
 		"?": "\uff1f"
 	}
 };
-let font = titles = false;
+let font = titles = random = false;
 
 function unicodereverse(s) {
 	var regexSymbolWithCombiningMarks = /([\0-\u02FF\u0370-\u1AAF\u1B00-\u1DBF\u1E00-\u20CF\u2100-\uD7FF\uE000-\uFE1F\uFE30-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])([\u0300-\u036F\u1AB0-\u1AFF\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]+)/g;
@@ -1816,6 +1816,10 @@ function walk(txt, f) {
 
 function getfancy(txt) {
 	(txt === '') && usage();
+	if (random) {
+		var keys = Object.keys(fonts);
+		font = keys[Math.floor(Math.random() * keys.length)];
+	}
 	if (font) {
 		fonts.hasOwnProperty(font) ? walk(txt, font) : usage('unknown font');
 	} else {
@@ -1837,6 +1841,10 @@ function setArgs() {
 			type: "boolean",
 			short: "t",
 		},
+		random: {
+			type: "boolean",
+			short: "r",
+		}
 	};
 	try {
 		const { values, positionals } = parseArgs({
@@ -1846,6 +1854,7 @@ function setArgs() {
 		});
 		font = values.font || false;
 		titles = values.titles || false;
+		random = values.random || false;
 		getfancy(positionals.join(" "));
 	} catch (e) {
 		usage();
@@ -1854,17 +1863,18 @@ function setArgs() {
 
 function usage(msg) {
 	(msg) && console.log(`error: ${msg}\n`);
-	console.log(`usage: sofancy [-f (font) | -t] string
+	console.log(`usage: sofancy [-f (font) | -t | -r] string
 
  flags:
   -f|--font (font) : output in a single font
   -t|--titles      : display titles in output
+  -r|--random      : pick a random font (clobbers -f)
 
  examples:
   sofancy -f wide aesthetics
 ａｅｓｔｈｅｔｉｃｓ
   sofancy -t some string | fzf | xsel -i
-  git commit -m "$(sofancy -f bolditalic STYLIN)"
+  git commit -m "$(sofancy -tr  message | sed 's/^.*  /docs: /')"
 `);
 	process.exit();
 }

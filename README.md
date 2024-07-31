@@ -1,6 +1,6 @@
 # sofancy
 
-fun unicode font tool
+a fun unicode font tool
 
 ## demo
 
@@ -51,19 +51,22 @@ wide            Ｙｏｕ Ｓｏ Ｆａｎｃｙ
 __ῳɛıཞɖ ųŋıƈơɖɛ ʄƖɛҳıŋɠ? 😜__
 
 ```
-usage: sofancy [-f (font) | -t] string
+usage: sofancy [-f (font) | -t | -r] string
 
  flags:
   -f|--font (font) : output in a single font
   -t|--titles      : display titles in output
+  -r|--random      : pick a random font (clobbers -f)
 
  examples:
   sofancy -f wide aesthetics
 ａｅｓｔｈｅｔｉｃｓ
   sofancy -t some string | fzf | xsel -i
-  git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
+  git commit -m "$(sofancy -tr  message | sed 's/^.*  /docs: /')"
 ```
+
 ## install
+
 clone and install
 ```
 git clone git@github.com:xero/sofancy.git sofancy
@@ -75,7 +78,8 @@ use `npm` to globally install
 
 `npm i -g sofancy`
 
-### note
+### notes
+
 on unix systems node "bins" are normally placed in `/usr/local/lib/node` or `/usr/local/lib/node_modules` unless your export a custom `NODE_PATH`. either way, make sure the appropriate directory is in your path.
 
 
