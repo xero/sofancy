@@ -1,21 +1,15 @@
 {
   "name": "sofancy",
   "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "main": "sofancy.js",
-  "description": "fun unicode font tool",
+  "description": "a fun unicode font tool",
   "repository": {
     "type": "git",
     "url": "github.com:xero/sofancy"
   },
   "license": "CC0-1.0",
-  "directories": {
-    "fonts": "./fonts"
-  },
   "bin": "sofancy.js",
-  "devDependencies": {
-    "eslint": "^8.42.0"
-  },
   "scripts": {
     "test": "./sofancy.js -t So Fancy",
     "lint": "eslint --cache ."
@@ -27,10 +21,13 @@
     "unicode",
     "fonts",
     "aesthetics",
-		"cli",
-		"tty",
-		"terminal",
-		"console",
-		"textart"
-  ]
+    "cli",
+    "tty",
+    "terminal",
+    "console",
+    "textart"
+  ],
+  "devDependencies": {
+    "eslint": "^9.8.0"
+  }
 }

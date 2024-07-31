@@ -6,6 +6,8 @@ fun unicode font tool
 
 https://sofancy.0w.nz
 
+source is [here](https://github.com/xero/sofancy/blob/main/demo.html)
+
 ## examples
 
 ```
@@ -58,8 +60,6 @@ usage: sofancy [-f (font) | -t] string
  examples:
   sofancy -f wide aesthetics
 ａｅｓｔｈｅｔｉｃｓ
-  sofancy -tf neon llamas | sed 's/neon.* /txt: /'
-txt: ᒪᒪᗩᗰᗩᔕ
   sofancy -t some string | fzf | xsel -i
   git commit -m "style(docs): $(sofancy -f bolditalic STYLIN)"
 ```
