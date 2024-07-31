@@ -1811,7 +1811,7 @@ function walk(txt, f) {
 	}
 	fancy += (f.match(/^(mirror|flip|upsidedown)$/))
 		? unicodereverse(specimen) : specimen;
-	console.log(!titles ? `${fancy} ` : `${f}: ${fancy} `);
+	console.log(!titles ? `${fancy} ` : `${f.padEnd(15)} ${fancy} `);
 }
 
 function getfancy(txt) {

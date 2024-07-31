@@ -1,33 +1,30 @@
 {
-  "name": "sofancy",
-  "author": "xero <x@xero.style> (https://x-e.ro)",
-  "version": "3.0.1",
-  "main": "sofancy.js",
-  "description": "a fun unicode font tool",
-  "repository": {
-    "type": "git",
-    "url": "github.com:xero/sofancy"
-  },
-  "license": "CC0-1.0",
-  "bin": "sofancy.js",
-  "scripts": {
-    "test": "./sofancy.js -t So Fancy",
-    "lint": "eslint --cache ."
-  },
-  "keywords": [
-    "unicode",
-    "fonts",
-    "unicode-fonts",
-    "unicode",
-    "fonts",
-    "aesthetics",
-    "cli",
-    "tty",
-    "terminal",
-    "console",
-    "textart"
-  ],
-  "devDependencies": {
-    "eslint": "^9.8.0"
-  }
+	"name": "sofancy",
+	"author": "xero <x@xero.style> (https://x-e.ro)",
+	"version": "3.0.3",
+	"main": "sofancy.js",
+	"description": "a fun unicode font tool",
+	"repository": {
+		"type": "git",
+		"url": "github.com:xero/sofancy"
+	},
+	"license": "CC0-1.0",
+	"bin": "sofancy.js",
+	"scripts": {
+		"test": "./sofancy.js -t So Fancy",
+		"lint": "eslint --cache ."
+	},
+	"keywords": [
+		"unicode",
+		"fonts",
+		"unicode-fonts",
+		"unicode",
+		"fonts",
+		"aesthetics",
+		"cli",
+		"tty",
+		"terminal",
+		"console",
+		"textart"
+	]
 }
