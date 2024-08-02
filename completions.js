@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const env = require('node:process'),
 	fs = require('node:fs'),
 	util = require('node:util'),
@@ -13,7 +12,9 @@ _sofancy() {
 		'(-f)'{-f,--font}'[pick a fancy font]:font:->font' \\
 		'(-tf)'{-tf,--titledfont}'[pick a fancy font display with name]:font:->font' \\
 		'(-t)'{-t,--titles}'[display font names]'\\
-		'(-r)'{-r,--random}'[randomized font]'
+		'(-r)'{-r,--random}'[randomized font]'\\
+		'(-c)'{-c,--completions}'[install shell completions]'\\
+		'(-h)'{-h,--help}'[display usage]'
 		case "$state" in
 		(font)
 			_values 'fonts' \\
@@ -80,7 +81,7 @@ _sofancy_completions() {
 		while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_fancy_filter "alien asian asian2 bent bolditalic bold circled currency cursive doublestruck flip frakturbold fraktur greek invertedsquares italic mirrorflip mirror mono neon squares squiggle1 squiggle2 squiggle3 squiggle4 squiggle5 squiggle6 subscript superscript symbols upperangle upsidedown wide")" -- "$cur")
 		;;
 	*)
-		while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_fancy_filter "--font -f --titles -t --random -r -tf")" -- "$cur")
+		while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_fancy_filter "--font -f --titles -t --random -r --completions -c --help -h")" -- "$cur")
 		;;
 	esac
 } &&
@@ -128,4 +129,4 @@ _sofancy_completions() {
 		await cksh('zsh') && await install(zpath, zsh, 'zsh ').catch(() => { });
 		done("\nsofancy completions install complete. \ud835\udcdb\ud835\udcf8\ud835\udcdb! ");
 	};
-completions();
+module.exports ={ completions }
