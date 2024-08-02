@@ -69,18 +69,15 @@ usage: sofancy [-f (font) | -t | -r] string
 
 clone and install
 ```
-git clone git@github.com:xero/sofancy.git sofancy
+git clone git@github.com:xero/sofancy.git
 cd sofancy
 npm i -g .
 ```
+running `npm run completions` will prompt your to install the shell completion files for bash and zsh (if those bin's exist). if they fail to install to their default global locations, it will prompt you for a custom path. alternatively, you can run `sudo !!`
 
 use `npm` to globally install
 
 `npm i -g sofancy`
-
-### post install
-
-npm will prompt you to optionally install shell completions for bash and zsh (if those bin's exist). if they fail to install to their default global locations, it will prompt you for a custom path. alternatively, you can run `sudo npm i -g sofancy postinstall`
 
 ### notes
 

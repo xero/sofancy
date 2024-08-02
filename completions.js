@@ -131,4 +131,4 @@ _sofancy_completions() {
 		await cksh('zsh') && await install(zpath, zsh, 'zsh ').catch(() => { });
 		done("\nsofancy completions install complete. \ud835\udcdb\ud835\udcf8\ud835\udcdb! ");
 	};
-(process.stdout.isTTY && !cicd) ? logic() : done("skipped completions for non-interactive mode");
+(!cicd) ? logic() : done("skipped completions for non-interactive mode");

@@ -11,7 +11,7 @@
 	"license": "CC0-1.0",
 	"bin": "sofancy.js",
 	"scripts": {
-		"postinstall": "./completions.js",
+		"completions": "./completions.js",
 		"test": "./sofancy.js -t So Fancy",
 		"lint": "eslint --cache ."
 	},
