@@ -5,9 +5,6 @@ const env = require('node:process'),
 	exec = util.promisify(require('node:child_process').exec),
 	readline = require('node:readline'),
 	rl = readline.createInterface({ input: process.stdin, output: process.stdout }),
-	cicd = env.CI !== '0' && env.CI !== 'false' &&
-		('CI' in env || 'CONTINUOUS_INTEGRATION' in env
-			|| Object.keys(env).some(key => key.startsWith('CI_'))),
 	zpath = "/usr/local/share/zsh/site-functions/_sofancy",
 	zsh = `#compdef sofancy
 _sofancy() {
@@ -125,10 +122,10 @@ _sofancy_completions() {
 			});
 		});
 	},
-	logic = async () => {
+	completions = async () => {
 		await prompt(`install shell completions? [y/n]:`) || done();
 		await cksh('bash') && await install(bpath, bash, 'bash').catch(() => { });
 		await cksh('zsh') && await install(zpath, zsh, 'zsh ').catch(() => { });
 		done("\nsofancy completions install complete. \ud835\udcdb\ud835\udcf8\ud835\udcdb! ");
 	};
-(!cicd) ? logic() : done("skipped completions for non-interactive mode");
+completions();
