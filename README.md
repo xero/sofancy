@@ -11,6 +11,7 @@ source is [here](https://github.com/xero/sofancy/blob/main/demo.html)
 ## examples
 
 ```
+alien           ᖻᓍᑘ Sᓍ ᖴᗩᘉᑢᖻ
 asian           ㄚㄖㄩ 丂ㄖ 千卂几匚ㄚ
 asian2          ﾘのひ 丂の ｷﾑ刀ᄃﾘ
 bent            Ӌօմ Ϛօ Ƒąղçվ
@@ -23,7 +24,6 @@ doublestruck    𝕐𝕠𝕦 𝕊𝕠 𝔽𝕒𝕟𝕔𝕪
 flip            ⅄on Ƨo Էɑucλ
 fraktur         𝔜𝔬𝔲 𝔖𝔬 𝔉𝔞𝔫𝔠𝔶
 frakturbold     𝖄𝖔𝖚 𝕾𝖔 𝕱𝖆𝖓𝖈𝖞
-futureAlien     ᖻᓍᑘ Sᓍ ᖴᗩᘉᑢᖻ
 greek           уσυ ѕσ ƒαη¢у
 invertedsquares 🆈🅾🆄 🆂🅾 🅵🅰🅽🅲🆈
 italic          𝘠𝘰𝘶 𝘚𝘰 𝘍𝘢𝘯𝘤𝘺
@@ -78,10 +78,13 @@ use `npm` to globally install
 
 `npm i -g sofancy`
 
+### post install
+
+npm will prompt you to optionally install shell completions for bash and zsh (if those bin's exist). if they fail to install to their default global locations, it will prompt you for a custom path. alternatively, you can run `sudo npm i -g sofancy postinstall`
+
 ### notes
 
 on unix systems node "bins" are normally placed in `/usr/local/lib/node` or `/usr/local/lib/node_modules` unless your export a custom `NODE_PATH`. either way, make sure the appropriate directory is in your path.
-
 
 ## license
 

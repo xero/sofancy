@@ -20,6 +20,7 @@ _sofancy() {
 		case "$state" in
 		(font)
 			_values 'fonts' \\
+				'alien' \\
 				'asian' \\
 				'asian2' \\
 				'bent' \\
@@ -32,7 +33,6 @@ _sofancy() {
 				'flip' \\
 				'frakturbold' \\
 				'fraktur' \\
-				'futureAlien' \\
 				'greek' \\
 				'invertedsquares' \\
 				'italic' \\
@@ -80,7 +80,7 @@ _sofancy_completions() {
 
 	case "$compline" in
 	*'--font' | *'-f' | *'-tf')
-		while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_fancy_filter "asian asian2 bent bolditalic bold circled currency cursive doublestruck flip frakturbold fraktur futureAlien greek invertedsquares italic mirrorflip mirror mono neon squares squiggle1 squiggle2 squiggle3 squiggle4 squiggle5 squiggle6 subscript superscript symbols upperangle upsidedown wide")" -- "$cur")
+		while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_fancy_filter "alien asian asian2 bent bolditalic bold circled currency cursive doublestruck flip frakturbold fraktur greek invertedsquares italic mirrorflip mirror mono neon squares squiggle1 squiggle2 squiggle3 squiggle4 squiggle5 squiggle6 subscript superscript symbols upperangle upsidedown wide")" -- "$cur")
 		;;
 	*)
 		while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_fancy_filter "--font -f --titles -t --random -r -tf")" -- "$cur")

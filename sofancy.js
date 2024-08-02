@@ -690,7 +690,7 @@ const fonts = {
 		"Y": "\ud835\udd1c",
 		"Z": "\u2128"
 	},
-	"futureAlien": {
+	"futurealien": {
 		"a": "\u15e9",
 		"b": "\u15f7",
 		"c": "\u1462",
