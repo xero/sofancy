@@ -1,7 +1,7 @@
 {
 	"name": "sofancy",
 	"author": "xero <x@xero.style> (https://x-e.ro)",
-	"version": "3.0.3",
+	"version": "3.2.3",
 	"main": "sofancy.js",
 	"description": "a fun unicode font tool",
 	"repository": {
@@ -11,20 +11,26 @@
 	"license": "CC0-1.0",
 	"bin": "sofancy.js",
 	"scripts": {
+		"postinstall": "./completions.js",
 		"test": "./sofancy.js -t So Fancy",
 		"lint": "eslint --cache ."
 	},
 	"keywords": [
-		"unicode",
-		"fonts",
-		"unicode-fonts",
-		"unicode",
-		"fonts",
 		"aesthetics",
+		"ascii",
+		"ascii-art",
 		"cli",
-		"tty",
-		"terminal",
 		"console",
-		"textart"
+		"fancy",
+		"font",
+		"fonts",
+		"lolcat",
+		"terminal",
+		"termfont",
+		"textart",
+		"text-art",
+		"tty",
+		"unicode",
+		"unicode-fonts"
 	]
 }
