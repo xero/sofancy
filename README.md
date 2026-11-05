@@ -17,6 +17,7 @@ asian2          ﾘのひ 丂の ｷﾑ刀ᄃﾘ
 bent            Ӌօմ Ϛօ Ƒąղçվ
 bold            𝐘𝐨𝐮 𝐒𝐨 𝐅𝐚𝐧𝐜𝐲
 bolditalic      𝙔𝙤𝙪 𝙎𝙤 𝙁𝙖𝙣𝙘𝙮
+cherokee        ᎩᎾᏌ ᏚᎾ ᎦᎪᏁᏟᎩ
 circled         Ⓨⓞⓤ Ⓢⓞ Ⓕⓐⓝⓒⓨ
 currency        ɎØɄ ₴Ø ₣₳₦₵Ɏ
 cursive         𝓨𝓸𝓾 𝓢𝓸 𝓕𝓪𝓷𝓬𝔂
@@ -24,13 +25,22 @@ doublestruck    𝕐𝕠𝕦 𝕊𝕠 𝔽𝕒𝕟𝕔𝕪
 flip            ⅄on Ƨo Էɑucλ
 fraktur         𝔜𝔬𝔲 𝔖𝔬 𝔉𝔞𝔫𝔠𝔶
 frakturbold     𝖄𝖔𝖚 𝕾𝖔 𝕱𝖆𝖓𝖈𝖞
+gothic          𐌾𐍉𐌿 𐍃𐍉 𐍆𐌰𐌽𐌺𐌾
 greek           уσυ ѕσ ƒαη¢у
+invertedcircled 🅨🅞🅤 🅢🅞 🅕🅐🅝🅒🅨
 invertedsquares 🆈🅾🆄 🆂🅾 🅵🅰🅽🅲🆈
 italic          𝘠𝘰𝘶 𝘚𝘰 𝘍𝘢𝘯𝘤𝘺
 mirror          γoυ Ƨo ꟻɒИɔγ
 mirrorflip      ⅄on So ꓞɐuɔʎ
 mono            𝚈𝚘𝚞 𝚂𝚘 𝙵𝚊𝚗𝚌𝚢
 neon            YOᑌ ᔕO ᖴᗩᑎᑕY
+parenthesized   🄨⒪⒰ 🄢⒪ 🄕⒜⒩⒞⒴
+runic           ᚤᛟᚢ ᛊᛟ ᚠᚨᚾᛍᚤ
+sans            𝖸𝗈𝗎 𝖲𝗈 𝖥𝖺𝗇𝖼𝗒
+script          𝒴ℴ𝓊 𝒮ℴ ℱ𝒶𝓃𝒸𝓎
+serifbolditalic 𝒀𝒐𝒖 𝑺𝒐 𝑭𝒂𝒏𝒄𝒚
+serifitalic     𝑌𝑜𝑢 𝑆𝑜 𝐹𝑎𝑛𝑐𝑦
+smallcaps       ʏᴏᴜ ꜱᴏ ꜰᴀɴᴄʏ
 squares         🅈🄾🅄 🅂🄾 🄵🄰🄽🄲🅈
 squiggle1       ץ๏ย ร๏ Ŧคภςץ
 squiggle2       Yσυ Sσ Fαɳƈყ
@@ -41,6 +51,7 @@ squiggle6       ฯ໐น Ş໐ fคຖ¢ฯ
 subscript       Yₒᵤ ₛₒ Fₐₙcy
 superscript     ʸᵒᵘ ˢᵒ ᶠᵃⁿᶜʸ
 symbols         ¥ðµ §ð £åñ¢¥
+tifinagh        ⵢⵓⵓ ⵙⵓ ⴼⴰⵏⵛⵢ
 upperangle      YӨЦ ƧӨ FΛПᄃY
 upsidedown      ⅄on So Ⅎɐuɔʎ
 wide            Ｙｏｕ Ｓｏ Ｆａｎｃｙ
@@ -81,6 +92,8 @@ or use `npm` to globally install `npm i -g sofancy`
 ## post install
 
 `sofancy --completions` will prompt your to install the shell completion files for bash and zsh (if those bin's exist). if they fail to install to their default global locations, it will prompt you for a custom path. alternatively, you can run `sudo !!`
+
+on macos, sofancy installs to your homebrew prefix (`etc/bash_completion.d` and `share/zsh/site-functions`), so you don't need `sudo`. if your shell doesn't pick them up, follow [homebrew's shell completion setup](https://docs.brew.sh/Shell-Completion). without homebrew, sofancy uses the same paths under `/usr/local`, which do need `sudo`. apple's zsh reads that directory on its own, but bash users need to source the file from `~/.bash_profile`.
 
 ### notes
 
